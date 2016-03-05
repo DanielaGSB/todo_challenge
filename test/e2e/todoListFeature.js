@@ -11,8 +11,8 @@ describe('To Do List Feature', function() {
 
   it('allows user to add a task', function() {
     element(by.model('todoCtrl.newTask')).sendKeys('Learn Angular');
-    element(by.id('addTask')).click();
-    expect(element(by.id('taskList')).getText()).toEqual('Learn Angular');
+    element(by.buttonText('Add Task')).click();
+    expect(element(by.className('taskList')).getText()).toEqual('Learn Angular');
 
   });
 

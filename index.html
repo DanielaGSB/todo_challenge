@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="todoList">
+<html lang="en" ng-app="TodoList">
   <head>
     <meta charset="utf-8">
     <title>To Do List</title>
@@ -7,18 +7,21 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="js/app.js"></scrispt>
-    <script src="todoListController.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/todoListController.js"></script>
   </head>
 
-  <body ng-controller="todoListController as todoCtrl">
+  <body ng-controller="TodoListController as todoCtrl">
     <h1> To Do list </h1>
     <div>
       <form class="form-horizontal">
         <input type="text" placeholder="What should you be doing?.." ng-model="todoCtrl.newTask">
-        <button id="addTask" class="btn btn-success" ng-click="todoCtrl.addTask(todoCtrl.newTask)">Add task</button>
+        <button id="addTask" class="btn btn-success" ng-click="todoCtrl.addTask()">Add Task</button>
       </form>
-
+    <div>
+      <ul>
+        <li ng-repeat "taskList in todoCtrl.taskList"> {{taskList.text}} </li>
+      </ul>
       <div class="taskList" ng-repeat="taskList in todoCtrl.taskList">
           <span ng-class="{'done': taskList.done}">{{taskList.text}}</span>
           <input type="checkbox" ng-model="taskList.done"/>

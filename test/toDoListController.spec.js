@@ -1,10 +1,10 @@
-describe('todoListController', function() {
-  beforeEach(module('todoList'));
+describe('TodoListController', function() {
+  beforeEach(module('TodoList'));
 
   var ctrl;
 
   beforeEach(inject(function($controller) {
-    ctrl = $controller('todoListController');
+    ctrl = $controller('TodoListController');
   }));
 
   it('initialises with an empty to do list', function() {
@@ -17,8 +17,7 @@ describe('todoListController', function() {
     expect(ctrl.taskList[0].text).toEqual('Learn Angular');
   });
 
-  // describe( 'Viewing existing tasks', function() {
-  //     it( 'shows a list of existing tasks', function() {
+  // describe( 'when viewing existing tasks', function() {
   //       var tasks = [
   //           {
   //             'title': 'Learn Angular',
@@ -27,9 +26,9 @@ describe('todoListController', function() {
   //           {
   //             'title': 'Create a kickass app',
   //             done: false,
-  //       ]
-  //
-  //       expect( ctrl.listTasks.items ).toEqual(tasks);
+  //       ];
+  //  //     it( 'shows a list of existing tasks', function() {
+  //           expect( ctrl.listTasks.items ).toEqual(tasks);
   //     });
   //   });
   });

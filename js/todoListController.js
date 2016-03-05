@@ -1,10 +1,11 @@
-todoList.controller('todoListController', [function() {
+todoList.controller('TodoListController', [function() {
 
     var self = this;
     self.taskList = [];
 
   self.addTask = function(newTask){
     self.taskList.push({text: self.newTask, done: false});
+    self.newTask = '';
   };
 }]);
 
